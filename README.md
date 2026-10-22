@@ -1,2 +1,52 @@
-# pycharmers_LOC7
-Fraud Zero is an intelligent platform designed to streamline the generation of corporate expense reports while rigorously enforcing fraud detection and policy compliance. By leveraging state-of-the-art AI, Optical Character Recognition (OCR) and machine learning this platform significantly reduces manual effort and prevents financial leaks
+# 🚫💸 FRAUD ZERO 
+
+**An AI-Powered Expense Report Generator with Fraud Detection**  
+*Built by Team py.charmers (Mansi Dhamne, Akshay Gokhale, Vivek Gangwani, Purav Ahya)*
+
+---
+
+## 📖 Project Overview
+
+**Fraud Zero** is an intelligent, automated platform designed to streamline the generation of corporate expense reports while rigorously enforcing fraud detection and policy compliance. By leveraging state-of-the-art AI, Optical Character Recognition (OCR), and machine learning, this platform significantly reduces manual effort, prevents financial leaks, and provides actionable insights for enterprise financial optimization. 
+
+Our system not only extracts data from invoices and receipts with high accuracy but also acts as an active compliance guard. Through advanced anomaly detection models and a dynamic policy chatbot, Fraud Zero ensures that every penny claimed aligns with company guidelines.
+
+## 🎯 Why Do We Need Fraud Zero?
+
+Traditional expense reporting is tedious, error-prone, and highly susceptible to fraudulent claims. Fraud Zero tackles these industry-wide challenges by:
+*   **Eliminating Manual Errors & Reducing Processing Time:** Automating data entry straight from receipts.
+*   **Preventing Expense Fraud & Detecting Anomalies:** Catching duplicate claims, unusual spending patterns, and inflated costs in real-time.
+*   **Enhancing Compliance & Policy Adherence:** Empowering employees to understand policies via an AI chatbot before submitting expenses.
+*   **Securing Sensitive Financial Data:** Ensuring that managers and employees only see what they are authorized to see.
+*   **Providing Actionable Insights:** Generating comprehensive reports that help companies optimize their travel and operational budgets.
+
+## ✨ Key Features
+<img width="1354" height="686" alt="Picture7" src="https://github.com/user-attachments/assets/cc82304e-0223-47ac-9bba-ed515cf8e0ca" />
+
+*   🤖 **Automated Expense Processing:** Eliminates manual data entry by extracting text directly from receipts and invoices using **PaddleOCRx**.
+*   🕵️ **Advanced Fraud Detection:** Utilizes **AutoEncoders** and vector-based clustering to detect anomalies, flag suspicious transactions, and identify duplicate claims.
+*   💬 **Intelligent Policy Assistant (RAG Chatbot):** A Retrieval-Augmented Generation chatbot powered by **Phi-3/Gemini** and **Pinecone/Jina** allows employees to dynamically query company expense policies, ensuring adherence to financial guidelines before submission.
+*   🔐 **Role-Based Access Control (RBAC):** Secures access to expense reports and financial data based on organizational hierarchy (e.g., Employee, Manager, Admin).
+*   🏨 **Smart Cost Prediction:** Integrates the **Amadeus API** to predict hotel expenditures, helping to identify the most economical lodging options and enforce cost efficiency.
+*   📊 **Comprehensive Reporting:** Automatically compiles validated expenses into detailed reports, highlighting irregularities and providing actionable financial insights.
+
+## 🛠️ Technology Stack
+
+Fraud Zero is built on a robust, scalable, and AI-centric technology stack:
+
+### Frontend & Backend
+*   **Frontend:** Next.js (React)
+*   **Backend:** Node.js (Express), Python (Flask)
+*   **Database:** MongoDB
+
+### Artificial Intelligence & Machine Learning
+*   **OCR Engine:** Paddle-OCRX (for high-accuracy receipt parsing)
+*   **Large Language Models (LLMs):** Phi-3, Google Gemini
+*   **Vector Database (RAG):** Pinecone, Jina
+*   **Anomaly Detection:** AutoEncoders (for vector-based clustering of spending patterns)
+
+### External Integrations
+*   **APIs:** Amadeus API (for hotel booking and expenditure prediction)
+
+---
+*Run smarter expense tracking. Streamline your expense management with real-time collaboration, track receipts, generate reports, and manage budgets from anywhere with FRAUD ZERO.*
