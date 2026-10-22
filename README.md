@@ -30,6 +30,90 @@ Traditional expense reporting is tedious, error-prone, and highly susceptible to
 *   🏨 **Smart Cost Prediction:** Integrates the **Amadeus API** to predict hotel expenditures, helping to identify the most economical lodging options and enforce cost efficiency.
 *   📊 **Comprehensive Reporting:** Automatically compiles validated expenses into detailed reports, highlighting irregularities and providing actionable financial insights.
 
+### 🏗️ System Architecture & Workflow
+
+```mermaid
+flowchart TD
+    %% User Roles & Access
+    subgraph Users [Role-Based Access Control - RBAC]
+        E[Employee]
+        M[Manager / Admin]
+    end
+
+    %% Frontend Layer
+    subgraph Frontend [Frontend Interface]
+        UI[Next.js Web App]
+        Chat[Policy Chatbot UI]
+        Dashboard[Expense & Insight Dashboard]
+    end
+
+    %% Backend Layer
+    subgraph Backend [Backend Services]
+        Node[Node.js / Express API<br>Auth, Routing, Business Logic]
+        Flask[Flask API<br>ML & Data Processing]
+    end
+
+    %% AI & ML Engine
+    subgraph AIEngine [AI & ML Processing Engine]
+        OCR[Paddle-OCRX<br>Receipt & Invoice Extraction]
+        AutoEnc[AutoEncoders<br>Vector-Based Clustering / Anomaly Detection]
+        RAG[RAG Pipeline<br>Jina Embeddings]
+        LLM[Phi-3 / Gemini<br>Generative AI]
+    end
+
+    %% Databases
+    subgraph Databases [Data Storage]
+        Mongo[(MongoDB<br>Users, Reports, RBAC)]
+        Pinecone[(Pinecone Vector DB<br>Company Policies)]
+    end
+
+    %% External APIs
+    subgraph External [External APIs]
+        Amadeus[Amadeus API<br>Hotel Price Prediction & Verification]
+    end
+
+    %% User Interactions
+    E -->|Uploads Receipts| UI
+    E -->|Queries Policies| Chat
+    M -->|Reviews Flagged Reports| Dashboard
+    UI & Chat & Dashboard --- Node
+
+    %% Backend Routing
+    Node <-->|CRUD & Auth| Mongo
+    Node <-->|Offloads Heavy Compute| Flask
+
+    %% ML Processing Flow
+    Flask -->|1. Extract Text| OCR
+    OCR -->|Extracted Data| AutoEnc
+    AutoEnc -->|2. Flag Anomalies| Node
+
+    %% Chatbot RAG Flow
+    Flask <-->|3. Retrieve Context| RAG
+    RAG <--> Pinecone
+    RAG <--> LLM
+    LLM -->|Answers Queries| Chat
+
+    %% Cost Optimization Flow
+    Flask <-->|4. Fetch Lodging Data| Amadeus
+    Amadeus -->|Compare with Claims| AutoEnc
+
+    %% Output
+    Node -->|5. Generate Final Report| Dashboard
+
+    %% Styling
+    classDef frontend fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
+    classDef backend fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
+    classDef ai fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;
+    classDef db fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+    classDef ext fill:#eceff1,stroke:#607d8b,stroke-width:2px;
+
+    class UI,Chat,Dashboard frontend;
+    class Node,Flask backend;
+    class OCR,AutoEnc,RAG,LLM ai;
+    class Mongo,Pinecone db;
+    class Amadeus ext;
+```
+
 ## 🛠️ Technology Stack
 
 Fraud Zero is built on a robust, scalable, and AI-centric technology stack:
