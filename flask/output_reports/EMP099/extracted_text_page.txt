@@ -1,0 +1,8 @@
+PEESIPT
+01-02-2013=-11:32AM ,Terminal#
+18T-Shirt ,$25.50
+$305.00 ,1xWatches
+1xPants ,$32.99
+$6.50 ,1xSocks
+TOTALAMOUNT ,$363.99
+CASH ,$400.00
