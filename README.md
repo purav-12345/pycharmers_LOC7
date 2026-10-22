@@ -114,6 +114,16 @@ flowchart TD
     class Amadeus ext;
 ```
 
+### 📝 Flowchart Breakdown (Textual Explanation)
+You can add this text right below the diagram in your README to explain the data flow to readers:
+
+**How the System Works (Data Flow):**
+1. **Input & Extraction:** An employee uploads a receipt via the **Next.js** frontend. The **Node.js** backend routes this to the **Flask** server, where **Paddle-OCRX** accurately extracts the text and financial data from the document.
+2. **Fraud & Anomaly Detection:** The extracted data is passed through an **AutoEncoder** machine learning model. Using vector-based clustering, it compares the current expense against historical spending patterns to instantly flag anomalies, duplicates, or suspicious behavior.
+3. **Cost Optimization:** For travel expenses, the system pings the **Amadeus API** to predict and verify hotel expenditures, ensuring the claimed amount aligns with economical lodging options.
+4. **Policy Chatbot (RAG):** If an employee is unsure about an expense rule, they ask the chatbot. The query goes through a RAG pipeline (powered by **Phi-3/Gemini**), retrieves the exact company guidelines stored as vectors in **Pinecone/Jina**, and provides a dynamic, accurate answer.
+5. **Secure Reporting:** The final, processed data is saved to **MongoDB**. Thanks to **Role-Based Access Control (RBAC)**, managers are presented with a secure, detailed dashboard highlighting any irregularities, flagged anomalies, and actionable insights for financial optimization.
+
 ## 🛠️ Technology Stack
 
 Fraud Zero is built on a robust, scalable, and AI-centric technology stack:
