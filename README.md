@@ -1,7 +1,7 @@
 # 🚫💸 FRAUD ZERO 
 
 **An AI-Powered Expense Report Generator with Fraud Detection**  
-*Built by Team py.charmers (Mansi Dhamne, Akshay Gokhale, Vivek Gangwani, Purav Ahya)*
+*Built by Team py.charmers*
 
 ---
 
